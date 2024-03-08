@@ -167,37 +167,34 @@ function handleMessage(sender_psid, message) {
     // id like button: sticker_id 369239263222822
  console.log('INTO HANDLE MESSAGE');
      console.log(message);
-    if( message && message.attachments && message.attachments[0].payload){
-        callSendAPI(sender_psid, "Thank you for watching my video !!!");
-        callSendAPIWithTemplate(sender_psid);
-        return;
-    }
 
     let entitiesArr = [ "wit$greetings", "wit$thanks", "wit$bye" ];
     let entityChosen = "";
-    entitiesArr.forEach((name) => {
-        let entity = firstTrait(message.nlp, name);
-        if (entity && entity.confidence > 0.8) {
-            entityChosen = name;
-        }
-    });
+    const apiUrl = `https://api.searskairos.ai/stream_product_search?data=${message}&lang=eng&h=0.7395409690503449`;
 
+     fetch(apiUrl)
+        .then(response => {
+            // Check if the request was successful (status code 200)
+            if (!response.ok) {
+             callSendAPI(sender_psid,`Welcome to Sears, The bot is needed more training.` );
+            }
+            // Parse the JSON response
+            return response.json();
+        })
+        .then(data => {
+            // Handle the data from the API response
+            console.log('API Response:', data);
+            // You can perform further actions with the data here
+            entityChosen="random"
+             callSendAPI(sender_psid, data.resp );
+        })
+        .catch(error => {
+            // Handle errors during the fetch process
+            console.error('Error fetching data:', error);
+        });
     if(entityChosen === ""){
         //default
-        callSendAPI(sender_psid,`Welcome to Sears, The bot is needed more training, try to say "thanks a lot" or "hi" to the bot` );
-    }else{
-       if(entityChosen === "wit$greetings"){
-           //send greetings message
-           callSendAPI(sender_psid,'Hi there! This bot is created by Mangilal!');
-       }
-       if(entityChosen === "wit$thanks"){
-           //send thanks message
-           callSendAPI(sender_psid,`You 're welcome!`);
-       }
-        if(entityChosen === "wit$bye"){
-            //send bye message
-            callSendAPI(sender_psid,'bye-bye!');
-        }
+        callSendAPI(sender_psid,`Welcome to Sears, The bot is needed more training.` );
     }
 }
 
