@@ -170,32 +170,27 @@ function handleMessage(sender_psid, message) {
 
     let entitiesArr = [ "wit$greetings", "wit$thanks", "wit$bye" ];
     let entityChosen = "";
-    const apiUrl = `https://api.searskairos.ai/stream_product_search?data=${message}&lang=eng&h=0.7395409690503449`;
+    const apiUrl = `https://api.searskairos.ai/stream_product_search?data=`+ message + `&lang=eng&h=0.7395409690503449`;
 
      fetch(apiUrl)
         .then(response => {
             // Check if the request was successful (status code 200)
             if (!response.ok) {
-             callSendAPI(sender_psid,`Welcome to Sears, The bot is needed more training.` );
+             callSendAPI(sender_psid,`Welcome to Sears.` );
             }
             // Parse the JSON response
             return response.json();
         })
         .then(data => {
             // Handle the data from the API response
-            console.log('API Response:', data);
+            console.log('API Response from BOT:', data);
             // You can perform further actions with the data here
-            entityChosen="random"
              callSendAPI(sender_psid, data.resp );
         })
         .catch(error => {
             // Handle errors during the fetch process
             console.error('Error fetching data:', error);
         });
-    if(entityChosen === ""){
-        //default
-        callSendAPI(sender_psid,`Welcome to Sears, The bot is needed more training.` );
-    }
 }
 
 let callSendAPIWithTemplate = (sender_psid) => {
