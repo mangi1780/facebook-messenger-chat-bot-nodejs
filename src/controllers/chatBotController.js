@@ -170,7 +170,7 @@ function handleMessage(sender_psid, message) {
 
     let entitiesArr = [ "wit$greetings", "wit$thanks", "wit$bye" ];
     let entityChosen = "";
-    const apiUrl = `https://api.searskairos.ai/stream_product_search?data=`+ message + `&lang=eng&h=0.7395409690503449`;
+    const apiUrl = `https://api.searskairos.ai/stream_product_search?data=`+ message.text + `&lang=eng&h=0.7395409690503449`;
     console.log('API URL : ',apiUrl);
      fetch(apiUrl)
         .then(response => {
