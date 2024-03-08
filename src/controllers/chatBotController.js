@@ -165,7 +165,8 @@ function firstTrait(nlp, name) {
 function handleMessage(sender_psid, message) {
     //handle message for react, like press like button
     // id like button: sticker_id 369239263222822
-
+ console.log('INTO HANDLE MESSAGE');
+     console.log(message);
     if( message && message.attachments && message.attachments[0].payload){
         callSendAPI(sender_psid, "Thank you for watching my video !!!");
         callSendAPIWithTemplate(sender_psid);
