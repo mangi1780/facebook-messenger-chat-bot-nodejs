@@ -171,7 +171,7 @@ function handleMessage(sender_psid, message) {
     let entitiesArr = [ "wit$greetings", "wit$thanks", "wit$bye" ];
     let entityChosen = "";
     const apiUrl = `https://api.searskairos.ai/stream_product_search?data=`+ message + `&lang=eng&h=0.7395409690503449`;
-
+    console.log(apiUrl);
      fetch(apiUrl)
         .then(response => {
             // Check if the request was successful (status code 200)
