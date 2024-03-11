@@ -210,7 +210,7 @@ let callSendAPIWithTemplate = (sender_psid) => {
                     "elements": [
                         {
                             "title": "Want to buy sth awesome?",
-                            "image_url": "https://www.google.com/imgres?imgurl=https%3A%2F%2Ftms-outsource.com%2Fblog%2Fwp-content%2Fuploads%2F2023%2F11%2Fwhat-happened-to-Sears.jpg&tbnid=fPoniZLdtMB8bM&vet=12ahUKEwjt4OrR5OuEAxUg-jgGHcWMAq8QMygGegQIARB9..i&imgrefurl=https%3A%2F%2Ftms-outsource.com%2Fblog%2Fposts%2Fwhat-happened-to-sears%2F&docid=YCs0iF8SW8tReM&w=1200&h=686&q=sears&ved=2ahUKEwjt4OrR5OuEAxUg-jgGHcWMAq8QMygGegQIARB9",
+                            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Sears_Store_Closing_Sale_Westland_Mall_Hialeah_%2849525992311%29.jpg/1280px-Sears_Store_Closing_Sale_Westland_Mall_Hialeah_%2849525992311%29.jpg",
                             //"subtitle": "Watch more videos on my youtube channel ^^",
                             "buttons": [
                                 {
