@@ -210,7 +210,7 @@ let callSendAPIWithTemplate = (sender_psid) => {
                     "elements": [
                         {
                             "title": "Want to buy sth awesome?",
-                            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Sears_Store_Closing_Sale_Westland_Mall_Hialeah_%2849525992311%29.jpg/1280px-Sears_Store_Closing_Sale_Westland_Mall_Hialeah_%2849525992311%29.jpg",
+                            "image_url": "https://as1.ftcdn.net/v2/jpg/02/41/43/18/1000_F_241431868_8DFQpCcmpEPVG0UvopdztOAd4a6Rqsoo.jpg",
                             //"subtitle": "Watch more videos on my youtube channel ^^",
                             "buttons": [
                                 {
