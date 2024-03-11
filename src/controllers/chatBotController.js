@@ -187,6 +187,7 @@ function handleMessage(sender_psid, message) {
             // You can perform further actions with the data here
              callSendAPI(sender_psid, data.resp );
             callSendAPIWithTemplate(sender_psid);
+            callSendAPIWithVideo(sender_psid);
         })
         .catch(error => {
             // Handle errors during the fetch process
@@ -238,6 +239,41 @@ let callSendAPIWithTemplate = (sender_psid) => {
         }
     });
 };
+
+let callSendAPIWithVideo = (sender_psid) => {
+    // Specify the video URL
+    let videoUrl = "https://media.istockphoto.com/id/1483601793/video/portrait-of-beautiful-hispanic-woman-enjoying-peaceful-seaside-at-sunset-exploring.mp4?s=mp4-640x640-is&k=20&c=YTRPKaiZqvyIESwPrV0W0SEiXlEBsQW81XaGwPs71iA=";
+
+    // Create the message body with a video attachment
+    let body = {
+        "recipient": {
+            "id": sender_psid
+        },
+        "message": {
+            "attachment": {
+                "type": "video",
+                "payload": {
+                    "url": videoUrl
+                }
+            }
+        }
+    };
+
+    request({
+        "uri": "https://graph.facebook.com/v6.0/me/messages",
+        "qs": { "access_token": process.env.FB_PAGE_TOKEN },
+        "method": "POST",
+        "json": body
+    }, (err, res, body) => {
+        if (!err) {
+            // console.log('message sent!')
+        } else {
+            console.error("Unable to send message:" + err);
+        }
+    });
+ 
+};
+
 
 module.exports = {
   postWebhook: postWebhook,
