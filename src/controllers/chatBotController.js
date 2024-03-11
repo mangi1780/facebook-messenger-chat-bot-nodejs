@@ -186,6 +186,7 @@ function handleMessage(sender_psid, message) {
             console.log('API Response from BOT:', data);
             // You can perform further actions with the data here
              callSendAPI(sender_psid, data.resp );
+            callSendAPIWithTemplate(sender_psid);
         })
         .catch(error => {
             // Handle errors during the fetch process
