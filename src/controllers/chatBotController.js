@@ -242,8 +242,8 @@ let callSendAPIWithTemplate = (sender_psid) => {
 
 let callSendAPIWithVideo = (sender_psid) => {
     // Specify the video URL
-    let videoUrl = "https://media.istockphoto.com/id/1483601793/video/portrait-of-beautiful-hispanic-woman-enjoying-peaceful-seaside-at-sunset-exploring.mp4?s=mp4-640x640-is&k=20&c=YTRPKaiZqvyIESwPrV0W0SEiXlEBsQW81XaGwPs71iA=";
-
+    //let videoUrl = "https://media.istockphoto.com/id/1483601793/video/portrait-of-beautiful-hispanic-woman-enjoying-peaceful-seaside-at-sunset-exploring.mp4?s=mp4-640x640-is&k=20&c=YTRPKaiZqvyIESwPrV0W0SEiXlEBsQW81XaGwPs71iA=";
+let videoUrl = "https://drive.google.com/uc?id=1zxvlmssZqHLTU4JBgF9VStZsq8wB3vt8&export=download";
     // Create the message body with a video attachment
     let body = {
         "recipient": {
